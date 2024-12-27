@@ -46,6 +46,7 @@ export type Settings = {
   textEditable: boolean;
   textBoxBorders: boolean;
   displayOCR: boolean;
+  alwaysShowOCR: boolean;
   boldFont: boolean;
   pageNum: boolean;
   charCount: boolean;
@@ -73,6 +74,7 @@ const defaultSettings: Settings = {
   defaultFullscreen: false,
   disableMousePan: true,
   displayOCR: true,
+  alwaysShowOCR: false,
   textEditable: false,
   textBoxBorders: false,
   boldFont: false,
