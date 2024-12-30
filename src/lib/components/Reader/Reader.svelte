@@ -325,7 +325,7 @@ onDestroy(() => {
 
 <svelte:window
   on:resize={zoomDefault}
-  on:keyup={handleShortcuts}
+  on:keydown={handleShortcuts}
   on:touchstart={handleTouchStart}
   on:touchend={handlePointerUp}
 />
