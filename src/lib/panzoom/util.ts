@@ -100,7 +100,7 @@ export function panAlign(alignX: PanX, alignY: PanY) {
 export function zoomOriginal() {
   pz?.moveTo(0, 0);
   pz?.zoomTo(0, 0, 1 / pz.getTransform().scale);
-  panAlign('center', 'center');
+  panAlign('center', 'top');
 }
 
 export function zoomFitToWidth() {
