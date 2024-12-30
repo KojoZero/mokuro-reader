@@ -116,6 +116,26 @@ export function zoomFitToWidth() {
   panAlign('center', 'top');
 }
 
+export function zoomFitToHeight() {
+  if (!pz || !container) {
+    return;
+  }
+  const { innerWidth } = window;
+  //var customHeight = 1600;
+  var customHeight = get(settings).heightSize;
+  const scaleY = (1 / pz.getTransform().scale) * (customHeight / container.offsetHeight);
+  const scaleX = (1 / pz.getTransform().scale) * (innerWidth / container.offsetWidth);
+
+  pz.moveTo(0, 0);
+  if (container.offsetWidth*(customHeight / container.offsetHeight) > innerWidth) {
+    pz.zoomTo(0, 0, scaleX);
+  } else {
+    pz.zoomTo(0, 0, scaleY);
+  }
+  panAlign('center', 'top');
+}
+
+
 export function zoomFitToScreen() {
   if (!pz || !container) {
     return;
@@ -141,6 +161,9 @@ export function zoomDefault() {
       return;
     case 'zoomFitToWidth':
       zoomFitToWidth();
+      return;
+    case 'zoomFitToHeight':
+      zoomFitToHeight();
       return;
     case 'zoomOriginal':
       zoomOriginal();

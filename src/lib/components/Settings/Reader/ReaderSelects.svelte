@@ -5,10 +5,12 @@
 
   $: zoomModeValue = $settings.zoomDefault;
   $: fontSizeValue = $settings.fontSize;
+  $: heightSizeValue = $settings.heightSize;
 
   let zoomModes = [
     { value: 'zoomFitToScreen', name: 'Fit to screen' },
     { value: 'zoomFitToWidth', name: 'Fit to width' },
+    { value: 'zoomFitToHeight', name: 'Fit to custom height' },
     { value: 'zoomOriginal', name: 'Original size' },
     { value: 'keepZoom', name: 'Keep zoom' },
     { value: 'keepZoomStart', name: 'Keep zoom, pan to top' }
@@ -31,6 +33,14 @@
     { value: '60', name: '60' }
   ];
 
+  let heightSizes = [
+    { value: '1200', name: '1200px'},
+    { value: '1300', name: '1300px'},
+    { value: '1400', name: '1400px'},
+    { value: '1500', name: '1500px'},
+    { value: '1600', name: '1600px'}
+  ]
+
   function onBackgroundColor(event: Event) {
     updateSetting('backgroundColor', (event.target as HTMLInputElement).value);
   }
@@ -46,6 +56,14 @@
     items={zoomModes}
     value={zoomModeValue}
     on:change={(e) => onSelectChange(e, 'zoomDefault')}
+  />
+</div>
+<div>
+  <Label>Custom Height:</Label>
+  <Select
+    items={heightSizes}
+    value={heightSizeValue}
+    on:change={(e) => onSelectChange(e, 'heightSize')}
   />
 </div>
 <div>
