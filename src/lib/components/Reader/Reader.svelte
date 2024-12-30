@@ -157,10 +157,10 @@
           zoomDefault();
           return;
       case 'KeyW':
-          $panzoomStore?.moveBy(0, 300 * $panzoomStore?.getTransform().scale, true);
+          $panzoomStore?.moveBy(0, 300 * $panzoomStore?.getTransform().scale, false);
           return;
       case 'KeyS':
-          $panzoomStore?.moveBy(0, -300 * $panzoomStore?.getTransform().scale, true);
+          $panzoomStore?.moveBy(0, -300 * $panzoomStore?.getTransform().scale, false);
           return;
       case 'KeyA':
           left(event, true);
