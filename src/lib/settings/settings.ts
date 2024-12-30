@@ -43,6 +43,7 @@ export type VolumeDefaults = {
 export type Settings = {
   defaultFullscreen: boolean;
   disableMousePan: boolean;
+  disableArrowKeys: boolean;
   textEditable: boolean;
   textBoxBorders: boolean;
   displayOCR: boolean;
@@ -73,6 +74,7 @@ export type VolumeDefaultsKey = keyof VolumeDefaults;
 const defaultSettings: Settings = {
   defaultFullscreen: false,
   disableMousePan: true,
+  disableArrowKeys: false,
   displayOCR: true,
   alwaysShowOCR: false,
   textEditable: false,
