@@ -24,6 +24,7 @@
   import QuickActions from './QuickActions.svelte';
   import { beforeNavigate } from '$app/navigation';
   import { onMount, onDestroy } from 'svelte';
+  import { get } from 'svelte/store';
 
   // TODO: Refactor this whole mess
   export let volumeSettings: VolumeSettings;
@@ -124,16 +125,36 @@
     
     switch (action) {
       case 'ArrowLeft':
-        left(event, true);
-        return;
+        if (get(settings).disableArrowKeys){
+          return;
+        } else {
+          left(event, true);
+          return;
+        }
       case 'ArrowUp':
+        if (get(settings).disableArrowKeys){
+          return;
+        } else {
+          $panzoomStore?.moveBy(0, 300 * $panzoomStore?.getTransform().scale, false);
+          return;
+        }
       case 'PageUp':
         changePage(page - navAmount, true);
         return;
       case 'ArrowRight':
-        right(event, true);
-        return;
+        if (get(settings).disableArrowKeys){
+          return;
+        } else {
+          right(event, true);
+          return;
+        }
       case 'ArrowDown':
+        if (get(settings).disableArrowKeys){
+          return;
+        } else {
+          $panzoomStore?.moveBy(0, -300 * $panzoomStore?.getTransform().scale, false);
+          return;
+        }
       case 'PageDown':
       case 'Space':
         changePage(page + navAmount, true);

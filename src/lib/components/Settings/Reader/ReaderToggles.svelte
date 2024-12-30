@@ -5,6 +5,7 @@
   $: toggles = [
     { key: 'defaultFullscreen', text: 'Open reader in fullscreen', value: $settings.defaultFullscreen },
     { key: 'disableMousePan', text: 'Disable mouse panning', value: $settings.disableMousePan },
+    { key: 'disableArrowKeys', text: 'Disable arrow keys', value: $settings.disableArrowKeys },
     { key: 'textEditable', text: 'Editable text', value: $settings.textEditable },
     { key: 'textBoxBorders', text: 'Text box borders', value: $settings.textBoxBorders },
     { key: 'displayOCR', text: 'OCR enabled', value: $settings.displayOCR },
