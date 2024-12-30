@@ -22,19 +22,20 @@
         <p class="flex justify-between">
             <span class="font-bold">Scroll Up:</span>
             <span> 
+                <Kbd class="px-2 py-1.5">↑</Kbd> | 
                 <Kbd class="px-2 py-1.5">W</Kbd>
             </span>
         </p>
         <p class="flex justify-between">
             <span class="font-bold">Scroll Down:</span>
             <span>
+                <Kbd class="px-2 py-1.5">↓</Kbd> | 
                 <Kbd class="px-2 py-1.5">S</Kbd>
             </span>
         </p>
         <p class="flex justify-between">
             <span class="font-bold">Next Page:</span>
             <span>
-                <Kbd class="px-2 py-1.5">↓</Kbd> | 
                 <Kbd class="px-2 py-1.5">PgDn</Kbd> | 
                 <Kbd class="px-2 py-1.5">Space</Kbd>
             </span>
@@ -42,7 +43,6 @@
         <p class="flex justify-between">
             <span class="font-bold">Prev Page:</span>
             <span>
-                <Kbd class="px-2 py-1.5">↑</Kbd> | 
                 <Kbd class="px-2 py-1.5">PgUp</Kbd>
             </span>
         </p>
