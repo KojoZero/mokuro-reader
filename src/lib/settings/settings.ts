@@ -17,9 +17,17 @@ export type FontSize =
   | '48'
   | '60';
 
+export type HeightSize =
+  | '1200'
+  | '1300'
+  | '1400'
+  | '1500'
+  | '1600';  
+  
 export type ZoomModes =
   | 'zoomFitToScreen'
   | 'zoomFitToWidth'
+  | 'zoomFitToHeight'
   | 'zoomOriginal'
   | 'keepZoom'
   | 'keepZoomStart';
@@ -57,6 +65,7 @@ export type Settings = {
   edgeButtonWidth: number;
   showTimer: boolean;
   quickActions: boolean;
+  heightSize: HeightSize;
   fontSize: FontSize;
   zoomDefault: ZoomModes;
   invertColors: boolean;
@@ -87,8 +96,9 @@ const defaultSettings: Settings = {
   edgeButtonWidth: 40,
   showTimer: false,
   quickActions: true,
+  heightSize: "1400",
   fontSize: 'auto',
-  zoomDefault: 'keepZoomStart',
+  zoomDefault: 'zoomFitToHeight',
   invertColors: false,
   volumeDefaults: {
     singlePageView: true,
