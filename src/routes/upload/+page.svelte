@@ -36,7 +36,7 @@
     const items = getItems(html);
     message = 'Downloading images...';
 
-    const imageTypes = ['.jpg', '.jpeg', '.png', '.webp'];
+    const imageTypes = ['.jpg', '.jpeg', '.png', '.webp', '.avif'];
 
     max = items.length;
 

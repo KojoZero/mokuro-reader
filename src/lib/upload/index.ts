@@ -7,7 +7,7 @@ import { ZipReader, BlobWriter, getMimeType, Uint8ArrayReader } from '@zip.js/zi
 export * from './web-import'
 
 const zipTypes = ['zip', 'cbz', 'ZIP', 'CBZ'];
-const imageTypes = ['image/jpeg', 'image/png', 'image/webp'];
+const imageTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif'];
 
 export async function unzipManga(file: File) {
   const zipFileReader = new Uint8ArrayReader(new Uint8Array(await file.arrayBuffer()));
