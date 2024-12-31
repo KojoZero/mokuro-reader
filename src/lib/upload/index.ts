@@ -24,7 +24,12 @@ export async function unzipManga(file: File) {
   })
 
   for (const entry of sortedEntries) {
-    const mime = getMimeType(entry.filename);
+    var mime = getMimeType(entry.filename);
+    if (mime === "application/octet-stream"){
+      if (entry.filename.includes(".avif")){
+        mime = "image/avif";
+      }
+    }
     const isMokuroFile = entry.filename.split('.').pop() === 'mokuro'
 
     if (imageTypes.includes(mime) || isMokuroFile) {
