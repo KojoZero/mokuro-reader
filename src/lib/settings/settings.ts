@@ -93,7 +93,7 @@ const defaultSettings: Settings = {
   charCount: false,
   mobile: false,
   bounds: true,
-  backgroundColor: '#030712',
+  backgroundColor: '#282828',
   swipeThreshold: 50,
   edgeButtonWidth: 40,
   showTimer: false,
