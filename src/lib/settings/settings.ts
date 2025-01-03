@@ -34,6 +34,7 @@ export type ZoomModes =
 
 export type AnkiConnectSettings = {
   enabled: boolean;
+  serverAddress: string;
   pictureField: string;
   sentenceField: string;
   cropImage: boolean;
@@ -112,6 +113,7 @@ const defaultSettings: Settings = {
     cropImage: false,
     grabSentence: false,
     overwriteImage: true,
+    serverAddress: 'http://127.0.0.1:8765',
     pictureField: 'Picture',
     sentenceField: 'Sentence',
     triggerMethod: 'both'

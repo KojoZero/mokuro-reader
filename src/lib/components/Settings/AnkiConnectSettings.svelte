@@ -9,7 +9,7 @@
   let cropImage = $settings.ankiConnectSettings.cropImage;
   let grabSentence = $settings.ankiConnectSettings.grabSentence;
   let overwriteImage = $settings.ankiConnectSettings.overwriteImage;
-
+  let serverAddress = $settings.ankiConnectSettings.serverAddress;
   let pictureField = $settings.ankiConnectSettings.pictureField;
   let sentenceField = $settings.ankiConnectSettings.sentenceField;
 
@@ -35,6 +35,14 @@
       To trigger the anki connect integration, double click or right click (long press on mobile)
       any text box.
     </Helper>
+    <div>
+      <Label>AnkiConnect Server Address:</Label>
+      <Input
+        type="text"
+        bind:value={serverAddress}
+        on:change={() => updateAnkiSetting('serverAddress', serverAddress)}
+      />
+    </div>
     <div>
       <Toggle bind:checked={enabled} on:change={() => updateAnkiSetting('enabled', enabled)}
         >AnkiConnect Integration Enabled</Toggle

@@ -6,7 +6,7 @@ export * from './cropper'
 
 export async function ankiConnect(action: string, params: Record<string, any>) {
   try {
-    const res = await fetch('http://127.0.0.1:8765', {
+    const res = await fetch(get(settings).ankiConnectSettings.serverAddress, {
       method: 'POST',
       body: JSON.stringify({ action, params, version: 6 })
     })
