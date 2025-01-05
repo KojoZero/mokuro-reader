@@ -57,9 +57,8 @@ export async function imageToWebp(source: File) {
 
   if (context) {
     context.drawImage(image, 0, 0);
-    const blob = await canvas.convertToBlob({ type: 'image/webp' });
+    const blob = await canvas.convertToBlob({ type: 'image/webp', quality: 0.6 });
     image.close();
-
     return await blobToBase64(blob);
   }
 }
@@ -102,7 +101,7 @@ export async function updateLastCard(imageData: string | null | undefined, sente
         id,
         fields,
         picture: {
-          filename: `_${id}.webp`,
+          filename: `mokuro_${id}.webp`,
           data: imageData.split(';base64,')[1],
           fields: [pictureField],
         },
