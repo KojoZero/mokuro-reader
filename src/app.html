@@ -6,8 +6,14 @@
     <link rel="manifest" crossorigin="use-credentials" href="manifest.json" />
     <meta
       name="viewport"
-      content="width=device-width, height=device-height,initial-scale=1, minimum-scale=1, user-scalable=no"
+      content="width=device-width, height=device-height,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
     />
+    <style>
+      :root{
+        touch-action: pan-x pan-y;
+        height: 100%;
+      }
+    </style>
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="https://accounts.google.com/gsi/client"></script>
     %sveltekit.head%

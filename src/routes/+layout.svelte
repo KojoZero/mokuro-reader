@@ -10,7 +10,7 @@
   inject({ mode: dev ? 'development' : 'production' });
 </script>
 
-<div class=" h-full min-h-[100svh] text-white">
+<div class=" h-screen max-h-screen min-h-svh text-white">
   <NavBar />
   <slot />
   <Snackbar />
