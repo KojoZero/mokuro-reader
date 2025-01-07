@@ -5,6 +5,7 @@ import { get, writable } from 'svelte/store';
 
 let pz: PanZoom | undefined;
 let container: HTMLElement | undefined;
+const defaultMinZoom = Math.pow(0.8, 10);
 
 export const panzoomStore = writable<PanZoom | undefined>(undefined);
 
@@ -13,7 +14,7 @@ export function initPanzoom(node: HTMLElement) {
   pz = panzoom(node, {
     bounds: false,
     maxZoom: Math.pow(1.25, 10), //Adjusted to exponents of zoom in/out
-    minZoom: Math.pow(0.8, 10),
+    minZoom: defaultMinZoom,
     zoomDoubleClickSpeed: 1,
     enableTextSelection: true,
     beforeMouseDown: (e) => {
@@ -101,6 +102,7 @@ export function zoomOriginal() {
   pz?.moveTo(0, 0);
   pz?.zoomTo(0, 0, 1 / pz.getTransform().scale);
   panAlign('center', 'top');
+  setDMinZoom(1);
 }
 
 export function zoomFitToWidth() {
@@ -114,6 +116,7 @@ export function zoomFitToWidth() {
   pz.moveTo(0, 0);
   pz.zoomTo(0, 0, scale);
   panAlign('center', 'top');
+  setDMinZoom(pz.getTransform().scale);
 }
 
 export function zoomFitToHeight() {
@@ -129,8 +132,10 @@ export function zoomFitToHeight() {
   pz.moveTo(0, 0);
   if (container.offsetWidth*(customHeight / container.offsetHeight) > innerWidth) {
     pz.zoomTo(0, 0, scaleX);
+    setDMinZoom(pz.getTransform().scale);
   } else {
     pz.zoomTo(0, 0, scaleY);
+    setDMinZoom(pz.getTransform().scale);
   }
   panAlign('center', 'top');
 }
@@ -146,32 +151,45 @@ export function zoomFitToScreen() {
   const scale = (1 / pz.getTransform().scale) * Math.min(scaleX, scaleY);
   pz.moveTo(0, 0);
   pz.zoomTo(0, 0, scale);
+  setDMinZoom(pz.getTransform().scale);
   panAlign('center', 'center');
 }
 
 export function keepZoomStart() {
   panAlign('center', 'top');
+  setDMinZoom(defaultMinZoom);
 }
 
 export function zoomDefault() {
   const zoomDefault = get(settings).zoomDefault;
   switch (zoomDefault) {
     case 'zoomFitToScreen':
+      setDMinZoom(defaultMinZoom);
       zoomFitToScreen();
       return;
     case 'zoomFitToWidth':
+      setDMinZoom(defaultMinZoom);
       zoomFitToWidth();
       return;
     case 'zoomFitToHeight':
+      setDMinZoom(defaultMinZoom);
       zoomFitToHeight();
       return;
     case 'zoomOriginal':
+      setDMinZoom(defaultMinZoom);
       zoomOriginal();
       return;
     case 'keepZoomStart':
+      setDMinZoom(defaultMinZoom);
       keepZoomStart();
       return;
   }
+}
+//Function to handle updating min zoom
+export function setDMinZoom(inScale: number){
+  pz?.setMinZoom(inScale);
+  panzoomStore.set(pz);
+  return;
 }
 
 export function keepInBounds() {
