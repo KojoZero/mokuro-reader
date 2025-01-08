@@ -1,6 +1,7 @@
 <script lang="ts">
   import { catalog } from '$lib/catalog';
   import {
+  panAlign,
     Panzoom,
     panzoomStore,
     toggleFullScreen,
@@ -176,6 +177,14 @@
           const pageClamped = Math.max($volumes[volumeId].progress - 1, 1);
           updateProgress(volumeId, pageClamped);
           zoomDefault();
+          return;
+      case 'KeyQ':
+          $panzoomStore?.zoomTo(0, 0, 0.8);
+          panAlign('center', 'top');
+          return;
+      case 'KeyE':
+          $panzoomStore?.zoomTo(0, 0, 1.25);
+          panAlign('center', 'top');
           return;
       case 'KeyW':
           $panzoomStore?.moveBy(0, 200, false);

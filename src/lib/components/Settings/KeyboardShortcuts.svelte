@@ -76,6 +76,18 @@
                 <Kbd class="px-2 py-1.5">C</Kbd>
             </span>
         </p>
+        <p class="flex justify-between">
+            <span class="font-bold">Zoom In:</span>
+            <span>
+                <Kbd class="px-2 py-1.5">E</Kbd>
+            </span>
+        </p>
+        <p class="flex justify-between">
+            <span class="font-bold">Zoom Out:</span>
+            <span>
+                <Kbd class="px-2 py-1.5">Q</Kbd>
+            </span>
+        </p>
       </div>
       
   </AccordionItem>
