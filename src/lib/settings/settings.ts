@@ -53,6 +53,7 @@ export type Settings = {
   defaultFullscreen: boolean;
   disableMousePan: boolean;
   disableArrowKeys: boolean;
+  disableDMinZoom: boolean;
   textEditable: boolean;
   textBoxBorders: boolean;
   displayOCR: boolean;
@@ -85,6 +86,7 @@ const defaultSettings: Settings = {
   defaultFullscreen: false,
   disableMousePan: true,
   disableArrowKeys: false,
+  disableDMinZoom: false,
   displayOCR: true,
   alwaysShowOCR: false,
   textEditable: false,

@@ -102,7 +102,9 @@ export function zoomOriginal() {
   pz?.moveTo(0, 0);
   pz?.zoomTo(0, 0, 1 / pz.getTransform().scale);
   panAlign('center', 'top');
-  setDMinZoom(1);
+  if (!get(settings).disableDMinZoom){
+    setDMinZoom(1);
+  }
 }
 
 export function zoomFitToWidth() {
@@ -116,7 +118,9 @@ export function zoomFitToWidth() {
   pz.moveTo(0, 0);
   pz.zoomTo(0, 0, scale);
   panAlign('center', 'top');
-  setDMinZoom(pz.getTransform().scale);
+  if (!get(settings).disableDMinZoom){
+    setDMinZoom(pz.getTransform().scale);
+  }
 }
 
 export function zoomFitToHeight() {
@@ -132,10 +136,14 @@ export function zoomFitToHeight() {
   pz.moveTo(0, 0);
   if (container.offsetWidth*(customHeight / container.offsetHeight) > innerWidth) {
     pz.zoomTo(0, 0, scaleX);
-    setDMinZoom(pz.getTransform().scale);
+    if (!get(settings).disableDMinZoom){
+      setDMinZoom(pz.getTransform().scale);
+    }
   } else {
     pz.zoomTo(0, 0, scaleY);
-    setDMinZoom(pz.getTransform().scale);
+    if (!get(settings).disableDMinZoom){
+      setDMinZoom(pz.getTransform().scale);
+    }
   }
   panAlign('center', 'top');
 }
@@ -151,7 +159,9 @@ export function zoomFitToScreen() {
   const scale = (1 / pz.getTransform().scale) * Math.min(scaleX, scaleY);
   pz.moveTo(0, 0);
   pz.zoomTo(0, 0, scale);
-  setDMinZoom(pz.getTransform().scale);
+  if (!get(settings).disableDMinZoom){
+    setDMinZoom(pz.getTransform().scale);
+  }
   panAlign('center', 'center');
 }
 
