@@ -15,7 +15,7 @@
     { key: 'pageNum', text: 'Show page number', value: $settings.pageNum },
     { key: 'charCount', text: 'Show character count', value: $settings.charCount },
     { key: 'bounds', text: 'Bounds', value: $settings.bounds },
-    { key: 'mobile', text: 'Mobile', value: $settings.mobile },
+    { key: 'mobile', text: 'Mobile (Swipe and Double tap zoom)', value: $settings.mobile },
     { key: 'showTimer', text: 'Show timer', value: $settings.showTimer },
     { key: 'quickActions', text: 'Show quick actions', value: $settings.quickActions },
     { key: 'invertColors', text: 'Invert colors of the images', value: $settings.invertColors }
