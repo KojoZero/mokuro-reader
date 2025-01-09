@@ -40,7 +40,7 @@ export type AnkiConnectSettings = {
   cropImage: boolean;
   overwriteImage: boolean;
   grabSentence: boolean;
-  triggerMethod: 'rightClick' | 'doubleTap' | 'both'
+  triggerMethod: 'rightClick' | 'doubleTap' | 'both' | 'neither'
 }
 
 export type VolumeDefaults = {
@@ -53,6 +53,7 @@ export type Settings = {
   defaultFullscreen: boolean;
   disableMousePan: boolean;
   disableArrowKeys: boolean;
+  disableDMinZoom: boolean;
   textEditable: boolean;
   textBoxBorders: boolean;
   displayOCR: boolean;
@@ -85,6 +86,7 @@ const defaultSettings: Settings = {
   defaultFullscreen: false,
   disableMousePan: true,
   disableArrowKeys: false,
+  disableDMinZoom: false,
   displayOCR: true,
   alwaysShowOCR: false,
   textEditable: false,
@@ -116,7 +118,7 @@ const defaultSettings: Settings = {
     serverAddress: 'http://127.0.0.1:8765',
     pictureField: 'Picture',
     sentenceField: 'Sentence',
-    triggerMethod: 'both'
+    triggerMethod: 'neither'
   }
 };
 

@@ -214,7 +214,22 @@
   let startY = 0;
   let touchStart: Date;
 
-  function handleTouchStart(event: TouchEvent) {
+  function handleTouchStart(event: TouchEvent & { currentTarget: EventTarget & Window }) {
+    if (event.target && event.target instanceof HTMLElement) {
+      const selection = window.getSelection();
+      const isSelecting = selection && selection.toString().length > 0;
+      if (isSelecting) {  
+        if (!$panzoomStore?.isPaused()){
+          //console.log("was resumed, now paused");
+          $panzoomStore?.pause();
+        }
+      } else {
+        if ($panzoomStore?.isPaused()){
+          //console.log("was paused, now resumed");
+          $panzoomStore?.resume();
+        } 
+      }
+    }   
     if ($settings.mobile) {
       const { clientX, clientY } = event.touches[0];
       touchStart = new Date();

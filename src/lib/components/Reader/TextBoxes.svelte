@@ -114,12 +114,16 @@
     white-space: nowrap;
     border: 1px solid rgba(0, 0, 0, 0);
     z-index: 11;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   .textBox:focus,
   .textBox:hover {
     background: rgb(255, 255, 255);
     border: 1px solid rgba(0, 0, 0, 0);
+    user-select: text;
+    -webkit-user-select: text;
   }
 
   .textBox p {
