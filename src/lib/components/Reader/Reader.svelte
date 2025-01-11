@@ -303,7 +303,7 @@ let preloadStyle: HTMLStyleElement | null = null;
 $: {
     if (volume && index != undefined) {
       let preloadStartIndex = Math.max(0, index - (showSecondPage() ? 2 : 1));
-      let preloadEndIndex = index + (showSecondPage() ? 3 : 1);
+      let preloadEndIndex = Math.min(pages?.length-1, index + (showSecondPage() ? 3 : 1));
       let imagesToPreload: string[] = [];
 
       for (let i = preloadEndIndex; i >= preloadStartIndex; i--) {
