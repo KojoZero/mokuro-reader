@@ -7,7 +7,7 @@
   import Snackbar from '$lib/components/Snackbar.svelte';
   import ConfirmationPopup from '$lib/components/ConfirmationPopup.svelte';
 
-  inject({ mode: dev ? 'development' : 'production' });
+  //inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <div class=" h-screen max-h-screen min-h-svh text-white">

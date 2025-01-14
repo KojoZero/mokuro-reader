@@ -347,7 +347,7 @@ onDestroy(() => {
 });
 
   beforeNavigate(() => {
-    if (document.exitFullscreen) {
+    if (document.fullscreenElement) {
       document.exitFullscreen();
     }
 
