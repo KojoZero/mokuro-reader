@@ -3,7 +3,7 @@
 <style>
   :global(body.reader) {
     overflow: hidden !important;
-    overscroll-behavior: contain;
+    overscroll-behavior: none;
     -webkit-user-select: none;
     user-select: none;
   }
