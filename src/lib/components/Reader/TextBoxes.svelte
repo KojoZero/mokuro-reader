@@ -99,7 +99,7 @@
     {contenteditable}
   >
     {#each lines as line}
-      <p>{line}</p>
+      <p>&ZeroWidthSpace;{line}</p>
     {/each}
   </div>
 {/each}
