@@ -4,12 +4,14 @@
   import { AccordionItem, Label, Toggle, Input, Helper, Select } from 'flowbite-svelte';
 
   $: disabled = !$settings.ankiConnectSettings.enabled;
+  $: ankiMobileEnabled = $settings.ankiConnectSettings.ankiMobile;
 
   let enabled = $settings.ankiConnectSettings.enabled;
   let cropImage = $settings.ankiConnectSettings.cropImage;
   let grabSentence = $settings.ankiConnectSettings.grabSentence;
   let overwriteImage = $settings.ankiConnectSettings.overwriteImage;
   let serverAddress = $settings.ankiConnectSettings.serverAddress;
+  let ankiMobile = $settings.ankiConnectSettings.ankiMobile;
   let pictureField = $settings.ankiConnectSettings.pictureField;
   let sentenceField = $settings.ankiConnectSettings.sentenceField;
 
@@ -38,6 +40,7 @@
     <div>
       <Label>AnkiConnect Server Address:</Label>
       <Input
+        disabled={ankiMobileEnabled}
         type="text"
         bind:value={serverAddress}
         on:change={() => updateAnkiSetting('serverAddress', serverAddress)}
@@ -45,7 +48,12 @@
     </div>
     <div>
       <Toggle bind:checked={enabled} on:change={() => updateAnkiSetting('enabled', enabled)}
-        >AnkiConnect Integration Enabled</Toggle
+        >Enable Anki Integration</Toggle
+      >
+    </div>
+    <div>
+      <Toggle bind:checked={ankiMobile} on:change={() => updateAnkiSetting('ankiMobile', ankiMobile)}
+        >Use AnkiMobile URL Schemes (IOS)</Toggle
       >
     </div>
     <div>
