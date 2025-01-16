@@ -8,7 +8,7 @@ const config = {
 
   theme: {
     fontFamily: {
-      sans: 'Verdana, Geneva, Tahoma, sans-serif'
+      sans: 'NotoSansJP, Verdana, Geneva, Tahoma, sans-serif'
     },
     extend: {
       colors: {
