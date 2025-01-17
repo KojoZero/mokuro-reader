@@ -99,7 +99,7 @@
     {contenteditable}
   >
     {#each lines as line}
-      <p>&ZeroWidthSpace;{line}</p>
+      <p>&ZeroWidthSpace;{line.replaceAll("：", "．．").replaceAll("．．．", "…").replaceAll("．．", "…").replaceAll("．", "")}</p>
     {/each}
   </div>
 {/each}
