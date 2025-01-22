@@ -25,7 +25,7 @@ export function initPanzoom(node: HTMLElement) {
     beforeWheel: (e) => {
       if (!e.ctrlKey) {
           const pzStore = get(panzoomStore);
-          pzStore?.moveBy(0, -e.deltaY, false);
+          pzStore?.moveBy(0, 2*-e.deltaY, false);
 
           return true;
       }
