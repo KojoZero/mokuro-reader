@@ -23,10 +23,9 @@ export function initPanzoom(node: HTMLElement) {
       return nodeName === 'P' || mousePanDisabled;
     },
     beforeWheel: (e) => {
-      if (!e.ctrlKey) {
+      if (!e.ctrlKey && !get(settings).revertOldScroll) {
           const pzStore = get(panzoomStore);
           pzStore?.moveBy(0, 2*-e.deltaY, true);
-
           return true;
       }
       return false;

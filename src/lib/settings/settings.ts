@@ -54,6 +54,7 @@ export type Settings = {
   disableMousePan: boolean;
   disableArrowKeys: boolean;
   disableDMinZoom: boolean;
+  revertOldScroll: boolean;
   textEditable: boolean;
   textBoxBorders: boolean;
   displayOCR: boolean;
@@ -87,6 +88,7 @@ const defaultSettings: Settings = {
   disableMousePan: true,
   disableArrowKeys: false,
   disableDMinZoom: false,
+  revertOldScroll: false,
   displayOCR: true,
   alwaysShowOCR: false,
   textEditable: false,

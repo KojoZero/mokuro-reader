@@ -7,6 +7,7 @@
     { key: 'disableMousePan', text: 'Disable mouse panning', value: $settings.disableMousePan },
     { key: 'disableArrowKeys', text: 'Disable arrow keys', value: $settings.disableArrowKeys },
     { key: 'disableDMinZoom', text: 'Disable zoom out limit', value: $settings.disableDMinZoom },
+    { key: 'revertOldScroll', text: 'Use legacy mouse controls', value: $settings.revertOldScroll },
     { key: 'textEditable', text: 'Editable text', value: $settings.textEditable },
     { key: 'textBoxBorders', text: 'Text box borders', value: $settings.textBoxBorders },
     { key: 'displayOCR', text: 'OCR enabled', value: $settings.displayOCR },
