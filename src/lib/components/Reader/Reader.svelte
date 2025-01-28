@@ -136,7 +136,7 @@
         if (get(settings).disableArrowKeys){
           return;
         } else {
-          $panzoomStore?.moveBy(0, 200, false);
+          $panzoomStore?.moveBy(0, 200, true);
           return;
         }
       case 'PageUp':
@@ -153,7 +153,7 @@
         if (get(settings).disableArrowKeys){
           return;
         } else {
-          $panzoomStore?.moveBy(0, -200, false);
+          $panzoomStore?.moveBy(0, -200, true);
           return;
         }
       case 'PageDown':
@@ -187,10 +187,10 @@
           panAlign('center', 'top');
           return;
       case 'KeyW':
-          $panzoomStore?.moveBy(0, 200, false);
+          $panzoomStore?.moveBy(0, 200, true);
           return;
       case 'KeyS':
-          $panzoomStore?.moveBy(0, -200, false);
+          $panzoomStore?.moveBy(0, -200, true);
           return;
       case 'KeyA':
           left(event, true);

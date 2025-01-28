@@ -1,7 +1,16 @@
 diff --git a/node_modules/panzoom/index.js b/node_modules/panzoom/index.js
-index cc1556c..cb5a439 100644
+index cc1556c..5ffdabf 100644
 --- a/node_modules/panzoom/index.js
 +++ b/node_modules/panzoom/index.js
+@@ -459,7 +459,7 @@ function createPanZoom(domElement, options) {
+       return moveBy(dx, dy);
+     }
+ 
+-    if (moveByAnimation) moveByAnimation.cancel();
++    //if (moveByAnimation) moveByAnimation.cancel();
+ 
+     var from = { x: 0, y: 0 };
+     var to = { x: dx, y: dy };
 @@ -934,7 +934,12 @@ function createPanZoom(domElement, options) {
    function getScaleMultiplier(delta) {
      var sign = Math.sign(delta);
