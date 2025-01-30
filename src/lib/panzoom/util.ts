@@ -221,7 +221,7 @@ export function keepInBounds() {
   const height = container.offsetHeight * scale;
 
   const marginX = innerWidth * 0.001;
-  const marginY = innerHeight * 0.01;
+  const marginY = innerHeight * 0.001;
 
   let minX = innerWidth - width - marginX;
   let maxX = marginX;
@@ -229,6 +229,7 @@ export function keepInBounds() {
   let maxY = marginY;
 
   let forceCenterY = false;
+  let forceCenterX = false;
 
   if (width + 2 * marginX <= innerWidth) {
     minX = marginX;
@@ -246,13 +247,21 @@ export function keepInBounds() {
     minY = innerHeight - height - marginY;
     maxY = marginY;
   }
-
-  if (x < minX) {
-    transform.x = minX;
+  
+  if (width < innerWidth){
+    forceCenterX = true;
   }
-  if (x > maxX) {
-    transform.x = maxX;
+  if (forceCenterX){
+    transform.x = innerWidth / 2 - width / 2;
+  } else {
+    if (x < minX) {
+      transform.x = minX;
+    }
+    if (x > maxX) {
+      transform.x = maxX;
+    }
   }
+  
 
   if (forceCenterY) {
     transform.y = innerHeight / 2 - height / 2;
