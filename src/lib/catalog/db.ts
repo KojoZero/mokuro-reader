@@ -12,7 +12,7 @@ export class CatalogDexie extends Dexie {
 
   constructor() {
     super('mokuro');
-    this.version(1).stores({
+    this.version(2).stores({
       catalog: 'id, manga, coverId'
     });
   }
