@@ -88,6 +88,12 @@
                 <Kbd class="px-2 py-1.5">Q</Kbd>
             </span>
         </p>
+        <p class="flex justify-between">
+            <span class="font-bold">Close Reader:</span>
+            <span>
+                <Kbd class="px-2 py-1.5">Esc</Kbd>
+            </span>
+        </p>
       </div>
       
   </AccordionItem>

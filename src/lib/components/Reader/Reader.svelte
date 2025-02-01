@@ -201,6 +201,9 @@
       case 'KeyR':
           zoomDefault();
           return;
+      case 'Escape':
+          history.go(-1);
+          return;
       default:
         break;
     }
@@ -435,24 +438,24 @@ onDestroy(() => {
   <div class="flex" style:background-color={$settings.backgroundColor}>
     <Panzoom>
       <button
-        class="h-full fixed -left-full z-10 w-full hover:bg-slate-400 opacity-[0.01]"
+        class="h-full fixed -left-full z-10 w-full hover:bg-gray-400 opacity-[0.01]"
         style:margin-left={`${$settings.edgeButtonWidth}px`}
         on:mousedown={mouseDown}
         on:mouseup={left}
       />
       <button
-        class="h-full fixed -right-full z-10 w-full hover:bg-slate-400 opacity-[0.01]"
+        class="h-full fixed -right-full z-10 w-full hover:bg-gray-400 opacity-[0.01]"
         style:margin-right={`${$settings.edgeButtonWidth}px`}
         on:mousedown={mouseDown}
         on:mouseup={right}
       />
       <button
-        class="h-screen fixed top-full -left-full z-10 w-[150%] hover:bg-slate-400 opacity-[0.01]"
+        class="h-screen fixed top-full -left-full z-10 w-[150%] hover:bg-gray-400 opacity-[0.01]"
         on:mousedown={mouseDown}
         on:mouseup={left}
       />
       <button
-        class="h-screen fixed top-full -right-full z-10 w-[150%] hover:bg-slate-400 opacity-[0.01]"
+        class="h-screen fixed top-full -right-full z-10 w-[150%] hover:bg-gray-400 opacity-[0.01]"
         on:mousedown={mouseDown}
         on:mouseup={right}
       />
@@ -475,13 +478,13 @@ onDestroy(() => {
     <button
       on:mousedown={mouseDown}
       on:mouseup={left}
-      class="left-0 top-0 absolute h-full w-16 hover:bg-slate-400 opacity-[0.01]"
+      class="left-0 top-0 absolute h-full w-16 hover:bg-gray-400 opacity-[0.01]"
       style:width={`${$settings.edgeButtonWidth}px`}
     />
     <button
       on:mousedown={mouseDown}
       on:mouseup={right}
-      class="right-0 top-0 absolute h-full w-16 hover:bg-slate-400 opacity-[0.01]"
+      class="right-0 top-0 absolute h-full w-16 hover:bg-gray-400 opacity-[0.01]"
       style:width={`${$settings.edgeButtonWidth}px`}
     />
   {/if}
