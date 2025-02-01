@@ -4,6 +4,7 @@ import Dexie, { type Table } from 'dexie';
 export interface Catalog {
   id: string;
   manga: Volume[];
+  coverId: number; 
 }
 
 export class CatalogDexie extends Dexie {
@@ -12,7 +13,7 @@ export class CatalogDexie extends Dexie {
   constructor() {
     super('mokuro');
     this.version(1).stores({
-      catalog: 'id, manga'
+      catalog: 'id, manga, coverId'
     });
   }
 }

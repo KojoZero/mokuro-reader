@@ -2,8 +2,8 @@
   import { catalog } from '$lib/catalog';
 
   export let id: string;
-
-  $: manga = $catalog?.find((item) => item.id === id)?.manga[0];
+  $: mangaCoverId = $catalog?.find((item) => item.id === id)?.coverId ?? 1;
+  $: manga = $catalog?.find((item) => item.id === id)?.manga[mangaCoverId-1];
 </script>
 
 {#if manga}

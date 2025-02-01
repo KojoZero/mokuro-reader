@@ -8,6 +8,9 @@
   import { page } from '$app/stores';
   import type { Volume } from '$lib/types';
   import { deleteVolume, mangaStats, volumes } from '$lib/settings';
+  import ChangeCoverModal from '../../lib/components/ChangeCoverModal.svelte';
+
+  let changeCoverOpen = false;
 
   function sortManga(a: Volume, b: Volume) {
     return a.mokuroData.volume.localeCompare(b.mokuroData.volume, undefined, {
@@ -59,6 +62,7 @@
       </div>
       <div class="sm:block flex-col flex gap-2">
         <Button color="alternative" on:click={onDelete}>Remove manga</Button>
+        <Button color="light" on:click={() => (changeCoverOpen = true)}>Change Cover</Button>
         <Button color="light" on:click={onExtract} disabled={loading}>
           {loading ? 'Extracting...' : 'Extract manga'}
         </Button>
@@ -73,3 +77,5 @@
 {:else}
   <div class="flex justify-center p-16">Manga not found</div>
 {/if}
+
+<ChangeCoverModal bind:open={changeCoverOpen} />

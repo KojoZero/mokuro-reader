@@ -224,7 +224,7 @@ export async function processFiles(_files: File[]) {
         if (existingCatalog) {
           await db.catalog.update(key, { manga: [...existingCatalog.manga, ...filtered] });
         } else {
-          await db.catalog.add({ id: key, manga: filtered });
+          await db.catalog.add({ id: key, manga: filtered, coverId: 1 });
         }
       }
 
