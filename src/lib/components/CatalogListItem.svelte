@@ -3,8 +3,9 @@
   import { ListgroupItem } from 'flowbite-svelte';
 
   export let id: string;
-  $: mangaCoverId = $catalog?.find((item) => item.id === id)?.coverId ?? 1;
-  $: manga = $catalog?.find((item) => item.id === id)?.manga[mangaCoverId-1];
+  $: currManga = $catalog?.find((item) => item.id === id);
+  $: mangaCoverId = currManga?.coverId ?? 1;
+  $: manga = currManga?.manga[mangaCoverId-1];
 </script>
 
 {#if manga}
